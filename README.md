@@ -1,4 +1,2 @@
-dotfiles
+Dennis Evert's dotfiles
 ========
-
-My dotfiles
