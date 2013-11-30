@@ -68,9 +68,9 @@
   	t = tag -n                      # show tags with <n> lines of each tag message
 [color]
     ui = true
- [core]
+[core]
  	autoctrl = input
- [merge]
+[merge]
  	ff = false
- [push]
+[push]
     default = current
