@@ -10,6 +10,12 @@ Import-Module posh-git
 Import-Module posh-npm
 
 ################################################################
+# Variables
+################################################################
+
+$VIMPATH = "C:\Program Files (x86)\Vim\vim74\vim.exe"
+
+################################################################
 # Prompt Config
 ################################################################
 
@@ -19,8 +25,8 @@ function global:prompt {
 
     # Reset color, which can be messed up by Enable-GitColors
     $Host.UI.RawUI.ForegroundColor = $GitPromptSettings.DefaultForegroundColor
-	
-	# Write-Host($pwd.ProviderPath) -nonewline
+    
+    # Write-Host($pwd.ProviderPath) -nonewline
     Write-Host("$ $(Split-Path $pwd -Leaf)") -nonewline
 
     Write-VcsStatus
@@ -40,12 +46,12 @@ Set-ExecutionPolicy Unrestricted
 
 # Set location to the C: drive
 function GoTo-CDrive {
-	iex "cd C:\"
+    iex "cd C:\"
 }
 
 # Set location to the Desktop
 function GoTo-Desktop {
-	iex "cd ~/Desktop"
+    iex "cd ~/Desktop"
 }
 
 # Set location to the Downloads folder
@@ -55,17 +61,17 @@ function GoTo-Downloads {
 
 # Set location to the C:\_Projects directory.
 function GoTo-Projects {
-	iex "cd C:/_Projects"
+    iex "cd C:/_Projects"
 }
 
 # Set location to the Dropbox
 function GoTo-Dropbox {
-	iex "cd ~/Dropbox"
+    iex "cd ~/Dropbox"
 }
 
 # Set location to user folder
 function GoTo-Home {
-	iex "cd ~/"
+    iex "cd ~/"
 }
 
 # Reload the powershell session
@@ -73,11 +79,33 @@ function Reload-PowerShell {
 
 }
 
+# Creates a new file if it does not already exist
+function Create-New-File
+{
+    $file = $args[0]
+    if($file -eq $null) {
+        throw "No filename supplied"
+    }
+    
+    if(Test-Path $file)
+    {
+        throw "File already exists"
+    }
+    
+    New-Item "$args" -ItemType File
+}
+
+# List all files in a directory plus hidden files
+function List-All-Files {
+    ls -force
+}
+
 ################################################################
 # Aliases
 ################################################################
 
 Set-Alias subl 'C:\Program Files\Sublime Text 3\sublime_text.exe'
+Set-Alias lsa List-All-Files
 Set-Alias p GoTo-Projects
 Set-Alias dt GoTo-Desktop
 Set-Alias dl GoTo-Downloads
@@ -85,3 +113,6 @@ Set-Alias c GoTo-CDrive
 Set-Alias db GoTo-Dropbox
 Set-Alias home GoTo-Home
 Set-Alias reload Reload-PowerShell
+Set-Alias touch Create-New-File
+Set-Alias vi $VIMPATH
+Set-Alias vim $VIMPATH
