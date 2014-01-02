@@ -1,79 +1,86 @@
 [user]
-	name = Dennis Evert
-	email = EMAIL
+    name = Dennis Evert
+    email = EMAIL
 [alias]
-	# add
-	a = add							# add
-	aa = add --all					# add all files
-	au = add -u 					# add all deleted files
-	ap = add --patch				# stage commits chunk by chunk
+    # add
+    a = add                         # add
+    aa = add --all                  # add all files
+    au = add -u                     # add all deleted files
+    ap = add --patch                # stage commits chunk by chunk
 
-	# branch
-	b = branch -v                   # branch (verbose)
-	
-	# commit
-	c = commit -m 					# commit with message
-	ca = commit -am					# commit all with message
-	amend = commit --amend			# amend your last commit
-	
-	# checkout
-	co = checkout					# checkout
-	nb = checkout -b                # create and switch to a new branch (mnemonic: "git new branch branchname...")
-
-
-	# diff
-	d = diff                        # diff unstaged changes
-	dc = diff --cached              # diff staged changes
-	last = diff HEAD^               # diff last committed change
+    # branch
+    b = branch -v                   # branch (verbose)
+    
+    # commit
+    c = commit -m                   # commit with message
+    ca = commit -am                 # commit all with message
+    amend = commit --amend          # amend your last commit
+    
+    # checkout
+    co = checkout                   # checkout
+    nb = checkout -b                # create and switch to a new branch (mnemonic: "git new branch branchname...")
 
 
-  	# log
-  	l = log --graph --date=short
-  	changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
-  	short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-  	changelog = log --pretty=format:\" * %s\"
-  	shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+    # diff
+    d = diff                        # diff unstaged changes
+    dc = diff --cached              # diff staged changes
+    last = diff HEAD^               # diff last committed change
 
-  	# pull
-  	pl = pull                      	# pull
 
-  	# pull request
-	pr = !hub pull-request			# pull request
+    # log
+    l = log --graph --date=short
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+    changelog = log --pretty=format:\" * %s\"
+    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
-  	# push
-  	ps = push                       # push
+    # pull
+    pl = pull                       # pull
 
-  	# rebase
-  	rc = rebase --continue          # continue rebase
-  	rs = rebase --skip              # skip rebase
+    # pull request
+    pr = !hub pull-request          # pull request
 
-  	# remote
-  	r = remote -v                   # show remotes (verbose)
+    # push
+    ps = push                       # push
 
-  	# reset
-  	unstage = reset HEAD            # remove files from index (tracking)
-  	uncommit = reset --soft HEAD^   # go back before last commit, with files in uncommitted state
-  	filelog = log -u                # show changes to a file
-  	mt = mergetool                  # fire up the merge tool
+    # rebase
+    rc = rebase --continue          # continue rebase
+    rs = rebase --skip              # skip rebase
 
-	# stash
-	ss = stash                      # stash changes
-	sl = stash list                 # list stashes
-	sa = stash apply                # apply stash (restore changes)
-	sd = stash drop                 # drop stashes (destory changes)
+    # remote
+    r = remote -v                   # show remotes (verbose)
 
-	# status
-  	s = status                      # status
-  	st = status                     # status
-  	stat = status                   # status
+    # reset
+    unstage = reset HEAD            # remove files from index (tracking)
+    uncommit = reset --soft HEAD^   # go back before last commit, with files in uncommitted state
+    filelog = log -u                # show changes to a file
+    mt = mergetool                  # fire up the merge tool
 
-  	# tag
-  	t = tag -n                      # show tags with <n> lines of each tag message
+    # stash
+    ss = stash                      # stash changes
+    sl = stash list                 # list stashes
+    sa = stash apply                # apply stash (restore changes)
+    sd = stash drop                 # drop stashes (destory changes)
+
+    # status
+    s = status                      # status
+    st = status                     # status
+    stat = status                   # status
+
+    # tag
+    t = tag -n                      # show tags with <n> lines of each tag message
 [color]
     ui = true
 [core]
- 	autoctrl = true
+    autoctrl = true
+    excludesfile = ~/.gitignore
 [merge]
- 	ff = false
+    ff = false
 [push]
     default = current
+[pull]
+    default = current
+[push]
+    default = current
+[credential]
+    helper = !'C:\\Users\\devert\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
