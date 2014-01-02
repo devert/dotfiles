@@ -74,9 +74,9 @@ function GoTo-Home {
     iex "cd ~/"
 }
 
-# Reload the powershell session
-function Reload-PowerShell {
-
+# Reload the powershell profile
+function Reload-Profile {
+    iex "powershell"
 }
 
 # Creates a new file if it does not already exist
@@ -96,8 +96,13 @@ function Create-New-File
 }
 
 # List all files in a directory plus hidden files
-function List-All-Files {
+function List-Hidden-Files {
     ls -force
+}
+
+# List all files in a directory plus hidden files
+function Open-In-Explorer {
+    ii .
 }
 
 ################################################################
@@ -105,14 +110,15 @@ function List-All-Files {
 ################################################################
 
 Set-Alias subl 'C:\Program Files\Sublime Text 3\sublime_text.exe'
-Set-Alias lsa List-All-Files
 Set-Alias p GoTo-Projects
 Set-Alias dt GoTo-Desktop
 Set-Alias dl GoTo-Downloads
 Set-Alias c GoTo-CDrive
 Set-Alias db GoTo-Dropbox
+set-Alias e Open-In-Explorer
 Set-Alias home GoTo-Home
-Set-Alias reload Reload-PowerShell
+Set-Alias lsa List-Hidden-Files
+Set-Alias reload Reload-Profile
 Set-Alias touch Create-New-File
 Set-Alias vi $VIMPATH
 Set-Alias vim $VIMPATH
