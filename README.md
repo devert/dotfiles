@@ -1,7 +1,7 @@
 Dennis Evert's dotfiles
 ========
 
-Configuration's that I like for OSX and Ubuntu machines.
+Configuration's that I like for OSX, Windows and Ubuntu machines.
 
 To learn more about dotfiles:
 
