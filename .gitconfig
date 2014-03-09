@@ -1,6 +1,6 @@
 [user]
 	name = Dennis Evert
-	email = EMAIL
+	email = dennisevert@gmail.com
 [alias]
 	# add
 	a = add							# add
@@ -10,12 +10,12 @@
 
 	# branch
 	b = branch -v                   # branch (verbose)
-	
+
 	# commit
 	c = commit -m 					# commit with message
 	ca = commit -am					# commit all with message
 	amend = commit --amend			# amend your last commit
-	
+
 	# checkout
 	co = checkout					# checkout
 	nb = checkout -b                # create and switch to a new branch (mnemonic: "git new branch branchname...")
@@ -76,4 +76,4 @@
 [merge]
  	ff = false
 [push]
-    default = current
+    default = matching
