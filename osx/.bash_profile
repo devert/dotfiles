@@ -1,4 +1,4 @@
-export PATH="/usr/local/git/bin":$PATH
+export PATH=/usr/local/bin:$PATH
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -31,3 +31,4 @@ fi
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
