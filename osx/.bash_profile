@@ -1,4 +1,5 @@
-export PATH=/usr/local/bin:$PATH
+PATH=${PATH}:/usr/local/bin:/usr/local/heroku/bin
+export PATH
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -32,3 +33,7 @@ fi
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
+# rbenv - Enable shims and autocompletion
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)";
+fi
