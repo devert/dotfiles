@@ -1,4 +1,4 @@
-PATH=${PATH}:/usr/local/bin:/usr/local/heroku/bin
+PATH="/usr/local/bin:${PATH}:/usr/local/heroku/bin"
 export PATH
 
 # Load the shell dotfiles, and then some:
